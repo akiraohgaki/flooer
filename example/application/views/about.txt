@@ -1,0 +1,21 @@
+Flooer Framework seek a view script file in the views directory
+of an application and these are default view script files:
+
+ 1. layout.html
+    A common view script file in an application
+    for a global design and will layout a pre-rendered content.
+
+ 2. controllername.html
+    A common view script file per a controller
+    and used this file if a layout.html does not exist.
+
+ 3. controllername/actionname.html
+    A view script file per an action
+    and used this file if a controllername.html does not exist.
+
+You can set a view script file in an action controller like this:
+
+    $this->view->setFile('about.txt');
+
+and Flooer Framework send a rendered content
+with a suitable Content-Type header by the view script file extension.
