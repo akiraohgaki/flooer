@@ -1,0 +1,10 @@
+<article class="edit">
+<h3><a href="<?=$this->baseUri;?>"><?=_('Notes');?></a> &raquo; <?=$this->note->id;?></h3>
+<form action="<?=$this->baseUri . $this->note->id;?>" method="post">
+<p>
+<textarea name="text" cols="60" rows="5"><?=$this->note->text;?></textarea><br>
+<button type="submit" name="method" value="put"><?=_('Save');?></button>
+<button type="submit" name="method" value="delete"><?=_('Delete');?></button>
+</p>
+</form>
+</article>
