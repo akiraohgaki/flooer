@@ -76,6 +76,7 @@ class Flooer_Http_Response
         305 => '305 Use Proxy',
         //306 => '', // Reserved
         307 => '307 Temporary Redirect',
+        308 => '308 Permanent Redirect',
         400 => '400 Bad Request',
         401 => '401 Unauthorized',
         402 => '402 Payment Required',
