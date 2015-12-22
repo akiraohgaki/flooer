@@ -58,6 +58,7 @@ class Flooer_Http_Response
         100 => '100 Continue',
         101 => '101 Switching Protocols',
         102 => '102 Processing',
+        // 103-199 Unassigned
         200 => '200 OK',
         201 => '201 Created',
         202 => '202 Accepted',
@@ -67,16 +68,19 @@ class Flooer_Http_Response
         206 => '206 Partial Content',
         207 => '207 Multi-Status',
         208 => '208 Already Reported',
+        // 209-225 Unassigned
         226 => '226 IM Used',
+        // 227-299 Unassigned
         300 => '300 Multiple Choices',
         301 => '301 Moved Permanently',
         302 => '302 Found',
         303 => '303 See Other',
         304 => '304 Not Modified',
         305 => '305 Use Proxy',
-        //306 => '', // Reserved
+        // 306 Unused
         307 => '307 Temporary Redirect',
         308 => '308 Permanent Redirect',
+        // 309-399 Unassigned
         400 => '400 Bad Request',
         401 => '401 Unauthorized',
         402 => '402 Payment Required',
@@ -90,16 +94,26 @@ class Flooer_Http_Response
         410 => '410 Gone',
         411 => '411 Length Required',
         412 => '412 Precondition Failed',
-        413 => '413 Request Entity Too Large',
-        414 => '414 Request-URI Too Long',
+        413 => '413 Payload Too Large',
+        414 => '414 URI Too Long',
         415 => '415 Unsupported Media Type',
-        416 => '416 Requested Range Not Satisfiable',
+        416 => '416 Range Not Satisfiable',
         417 => '417 Expectation Failed',
+        // 418-420 Unassigned
+        421 => '421 Misdirected Request',
         422 => '422 Unprocessable Entity',
         423 => '423 Locked',
         424 => '424 Failed Dependency',
-        //425 => '', // Reserved for WebDAV advanced
+        // 425 Unassigned
         426 => '426 Upgrade Required',
+        // 427 Unassigned
+        428 => '428 Precondition Required',
+        429 => '429 Too Many Requests',
+        // 430 Unassigned
+        431 => '431 Request Header Fields Too Large',
+        // 432-450 Unassigned
+        451 => '451 Unavailable for Legal Reasons',
+        // 452-499 Unassigned
         500 => '500 Internal Server Error',
         501 => '501 Not Implemented',
         502 => '502 Bad Gateway',
@@ -108,8 +122,11 @@ class Flooer_Http_Response
         505 => '505 HTTP Version Not Supported',
         506 => '506 Variant Also Negotiates',
         507 => '507 Insufficient Storage',
-        598 => '508 Loop Detected',
-        510 => '510 Not Extended'
+        508 => '508 Loop Detected',
+        // 509 Unassigned
+        510 => '510 Not Extended',
+        511 => '511 Network Authentication Required'
+        // 512-599 Unassigned
     );
 
     /**
