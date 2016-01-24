@@ -34,6 +34,6 @@ final class Flooer_Version
      *
      * @var     string
      */
-    const VERSION = '0.6.1';
+    const VERSION = '0.6.2';
 
 }
