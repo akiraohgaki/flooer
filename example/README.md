@@ -1,5 +1,4 @@
-EXAMPLE APP
------------
+# EXAMPLE APP
 
 This is a simple notes app using a SQLite3 database
 for example of Flooer Framework.
