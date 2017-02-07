@@ -65,24 +65,32 @@ class Flooer_Utility_Element
     public static function convertSpecialchar($source)
     {
         // Encode a conflicted characters
-        $source = preg_replace(
-            "/\"[^\"\n]+\"\<[^\>\n]+\>/e",
-            "rawurlencode(stripslashes('$0'))",
+        $source = preg_replace_callback(
+            "/\"[^\"\n]+\"\<[^\>\n]+\>/",
+            function ($matches) {
+                return rawurlencode(stripslashes($matches[0]));
+            },
             $source
         );
-        $source = preg_replace(
-            "/\"[^\"\n]+\"\{[^\}\n]+\}\<[^\>\n]+\>/e",
-            "rawurlencode(stripslashes('$0'))",
+        $source = preg_replace_callback(
+            "/\"[^\"\n]+\"\{[^\}\n]+\}\<[^\>\n]+\>/",
+            function ($matches) {
+                return rawurlencode(stripslashes($matches[0]));
+            },
             $source
         );
-        $source = preg_replace(
-            "/\"[^\"\n]+\"\{[^\}\n]+\}/e",
-            "rawurlencode(stripslashes('$0'))",
+        $source = preg_replace_callback(
+            "/\"[^\"\n]+\"\{[^\}\n]+\}/",
+            function ($matches) {
+                return rawurlencode(stripslashes($matches[0]));
+            },
             $source
         );
-        $source = preg_replace(
-            "/\"[^\"\n]+\"\([^\)\n]+\)/e",
-            "rawurlencode(stripslashes('$0'))",
+        $source = preg_replace_callback(
+            "/\"[^\"\n]+\"\([^\)\n]+\)/",
+            function ($matches) {
+                return rawurlencode(stripslashes($matches[0]));
+            },
             $source
         );
         $source = str_replace("\n>", "\n" . rawurlencode('>'), $source);
