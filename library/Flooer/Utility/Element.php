@@ -65,32 +65,27 @@ class Flooer_Utility_Element
     public static function convertSpecialchar($source)
     {
         // Encode a conflicted characters
+        $encodeConflictChars = function ($matches) {
+            return rawurlencode(stripslashes($matches[0]));
+        };
         $source = preg_replace_callback(
             "/\"[^\"\n]+\"\<[^\>\n]+\>/",
-            function ($matches) {
-                return rawurlencode(stripslashes($matches[0]));
-            },
+            $encodeConflictChars,
             $source
         );
         $source = preg_replace_callback(
             "/\"[^\"\n]+\"\{[^\}\n]+\}\<[^\>\n]+\>/",
-            function ($matches) {
-                return rawurlencode(stripslashes($matches[0]));
-            },
+            $encodeConflictChars,
             $source
         );
         $source = preg_replace_callback(
             "/\"[^\"\n]+\"\{[^\}\n]+\}/",
-            function ($matches) {
-                return rawurlencode(stripslashes($matches[0]));
-            },
+            $encodeConflictChars,
             $source
         );
         $source = preg_replace_callback(
             "/\"[^\"\n]+\"\([^\)\n]+\)/",
-            function ($matches) {
-                return rawurlencode(stripslashes($matches[0]));
-            },
+            $encodeConflictChars,
             $source
         );
         $source = str_replace("\n>", "\n" . rawurlencode('>'), $source);
