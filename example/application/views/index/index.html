@@ -7,11 +7,11 @@
 </form>
 </article>
 
-<? if (!empty($this->notes)): foreach ($this->notes as $note): ?>
+<?php if (!empty($this->notes)): foreach ($this->notes as $note): ?>
 
 <article class="note">
 <h3><a href="<?=$this->baseUri . $note->id;?>"><?=_('Note') . ' ' . $note->id;?></a></h3>
 <?=Flooer_Utility_Text::convertUri(Flooer_Utility_Element::convert($note->text));?>
 </article>
 
-<? endforeach; endif; ?>
+<?php endforeach; endif; ?>
