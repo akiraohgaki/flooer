@@ -202,6 +202,18 @@ class Flooer_Db_Table
         $sql = "SELECT COUNT(*)"
             . " FROM {$this->_config['prefix']}{$this->_config['name']}"
             . " WHERE {$this->_config['primary']} = $whereValue;";
+        $driver = $this->_db->getAttribute(Flooer_Db::ATTR_DRIVER_NAME);
+        if ($driver == 'sqlite' || $driver == 'mysql' || $driver == 'pgsql') {
+            $sql = "SELECT 1"
+                . " FROM {$this->_config['prefix']}{$this->_config['name']}"
+                . " WHERE {$this->_config['primary']} = $whereValue"
+                . " LIMIT 1;";
+        }
+        else if ($driver == 'sqlsrv') {
+            $sql = "SELECT TOP 1 1"
+                . " FROM {$this->_config['prefix']}{$this->_config['name']}"
+                . " WHERE {$this->_config['primary']} = $whereValue;";
+        }
         $this->_db->addStatementLog($sql);
         $statement = $this->_db->prepare($sql);
         $bool = $statement->execute();
