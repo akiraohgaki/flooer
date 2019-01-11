@@ -9,7 +9,7 @@
  * @package     Flooer_Db
  * @subpackage  Statement
  * @author      Akira Ohgaki <akiraohgaki@gmail.com>
- * @copyright   Akira Ohgaki
+ * @copyright   2014, Akira Ohgaki
  * @license     https://opensource.org/licenses/BSD-2-Clause  BSD License (2 Clause)
  * @link        https://github.com/akiraohgaki/flooer
  */

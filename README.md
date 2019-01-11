@@ -4,6 +4,6 @@
 
 A web application framework.
 
-Copyright: Akira Ohgaki
+Copyright: 2014, Akira Ohgaki
 
 License: BSD-2-Clause
